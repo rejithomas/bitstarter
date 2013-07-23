@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My First Bitstarter</title>
+    <title>UnCluttr</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup/code/bootstrap-combined.no-icons.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup/code/social-buttons.css">    
+    <script src="https://d396qusza40orc.cloudfront.net/startup/code/jquery.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup/code/bootstrap.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
           rel="stylesheet" type="text/css">
     <style type="text/css">
@@ -45,10 +44,11 @@
 
       /* Main body and headings */
       body{
-        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
       }
+	  .navbar .brand { font-weight: 300; }
       .heading, .subheading {
-        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
         text-align: center;
       }
       p.lead {
@@ -66,7 +66,7 @@
         padding: 2.5% 0%;
       }
       .order {
-        padding: 2% 0%;
+        text-align: center;
       }
       .actions {
         background-color: #343434;
@@ -78,8 +78,18 @@
       .statistics h3, .statistics p {
         color: white;
       }
-
-      /* Marketing Copy and Footer */
+	  
+	  .backers { text-align: center; }
+	  .backers li:first-child { padding-left: 0; border-left: none;}
+	  .backers li:last-child { padding-right: 0; border-right: none; }
+	  .stats {	margin: 0 auto; color: #3f3f3f;	font-size: 24px; display: inline-block;	font-family: "Open Sans"; border-right: 1px solid #cbcbcb; padding:0 26px; text-align: left;	}
+	  .stats span { color: #868686; font-size: 18px; margin-top: 5px; display: block; font-family: "Open Sans"; }
+     
+	 .btn-reserve { margin: 10px auto; padding: 20px 0; width: 274px; font-size: 32px; }
+		
+	  .price { color: #4c4c4c; font-size: 22px; font-family: "Lato"; line-height: 1.3; margin:0 auto 10px auto; }
+	  
+	 /* Marketing Copy and Footer */
       .copy {
         padding-top: 2.5%;
         padding-bottom: 2.5%;
@@ -104,7 +114,7 @@
 
     <!-- Mobile-friendly navbar adapted from example. -->
     <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <button type="button" class="btn btn-navbar"
@@ -113,7 +123,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Bitstarter</a>
+          <a class="brand" href="#">UnCluttr</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -130,18 +140,18 @@
     <!-- http://stackoverflow.com/a/12270322 -->
     <div class="container">
       <!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
-      <!-- www.google.com/fonts/specimen/Ubuntu -->
-      <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
+      <!-- www.google.com/fonts/specimen/Open+Sans -->
+      <!-- www.google.com/fonts/specimen/Open+Sans#pairings -->
       <div class="row-fluid heading">
         <div class="span12">
-          <h1>Product</h1>
+          <h1>UnCluttr</h1>
         </div>
       </div> 
       <div class="row-fluid subheading">
         <div class="span12">
           <!-- Special typography from Bootstrap for lead paragraph. -->
           <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
-          <p class="lead">One sentence description.</p>
+          <p class="lead">An Open Source Social News Platform that removes clutter.</p>
         </div>
       </div>
       <div class="row-fluid pitch">
@@ -150,50 +160,43 @@
         </div>
 
         <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
-        <div class="span5 actions">
-          <div class="span8 offset2">
-            <div class="statistics">
-              <div class="span4">
-                <!-- linediv-l and linediv-r give dividing lines that look
-                different in horizontal and vertical layouts, illustrating
-                media queries. -->
-                <div class="linediv-l">
-                <h3>1000</h3> <p>backers</p>
-                </div>
-              </div>
-              <div class="span4">
-                <div class="linediv-c">
-                  <h3>$6000</h3> <p>of $10,000</p>
-                </div>
-              </div>
-              <div class="span4">
-                <div class="linediv-r">
-                <h3>10</h3> <p>days left</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="span10 offset1">
-            <!-- Bootstrap progress bar -->
-            <!-- http://twitter.github.io/bootstrap/components.html#progress -->
-            <div class="thermometer progress active">
-              <div class="bar bar-success" style="width: 60%;"></div>
-              <div class="bar bar-warning" style="width: 40%;"></div>
-            </div>
-          </div>
-          <div class="span6 offset3 order">
-            <!-- Standard Bootstrap button. -->
-            <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
-            <button class="btn btn-success btn-large">Preorder</button>
-          </div>
-          <div class="span8 offset2 social">
-            <!-- Social buttons are not included in default Bootstrap. -->
-            <!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
-            <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
-            <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
-          </div>
-        </div>
-      </div>
+        <div class="span5">
+			<div class="span12">
+				<ul class="backers">
+					<li class="stats">
+						0 <span>backers</span>
+					</li>
+					<li class="stats">
+						$0 <span>of $40,000</span>
+					</li>
+					<li class="stats" id="days">
+						60 <span>days left</span>
+					</li>
+				</ul>
+			</div>
+			<div class="span12">
+				<!-- Bootstrap progress bar -->
+				<!-- http://twitter.github.io/bootstrap/components.html#progress -->
+				<div class="thermometer progress active">
+				  <div class="bar bar-success" style="width: 10%;"></div>
+				</div>
+			</div>
+			<div class="span12 order">
+				<!-- Standard Bootstrap button. -->
+				<!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
+				<p class="ship-date">Release Date: Dec 30th, 2013</p>
+				<a href="#uncluttr" class="btn btn-primary btn-large btn-reserve">Back this Project</a>
+				<p class="price">Free and Open Source</p>
+				<p>You'll get special preview access, 6 months of premium  hosting and a founders badge when released.</p>
+				<div class="fb-like" data-send="false" data-width="70" data-layout="box_count" data-show-faces="true"></div>
+			</div>
+			<div class="span8 offset2 social">
+				<!-- Social buttons are not included in default Bootstrap. -->
+				<!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
+				<button class="btn btn-twitter btn-small"><i class="icon-twitter"></i> Twitter</button>
+				<button class="btn btn-facebook btn-small"><i class="icon-facebook"></i> Facebook</button>
+			</div>
+       </div>
 
       <!-- Beyond this part the marketing copy begins. -->
       <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-align -->
@@ -204,37 +207,23 @@
           <img class="img-polaroid" src="http://placehold.it/480x300">
         </div>
         <div class="span5 copy">
+		  <h2>What is UnCluttr?</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
-            mollis justo velit at nunc. Fusce nec egestas sem. Donec
-            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
-            volutpat lorem ut congue malesuada. In facilisis scelerisque
-            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
-            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
-            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
-            rutrum, nunc leo tempus nisl, eu mollis justo velit at
-            nunc. Fusce nec egestas sem. Donec fringilla.
+            Uncluttr is dedicated to providing a simple seamless social reading and engagement experience. It is beautifully designed, customizable and completely Open Source. You can link in your feeds from Facebook, Twitter and LinkedIn and read information that is relevant to you among the clutter of ads, game requests and cat memes. You can carry your experience on your iPhone, Android and Windows Devices sharing it with the world.
           </p>
         </div>
       </div>
 
       <div class="row-fluid section2">
         <div class="span5 offset1 copy copy-right">
+		  <h3>Simple Feed Management</h3>	
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
-            mollis justo velit at nunc. Fusce nec egestas sem. Donec
-            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
-            volutpat lorem ut congue malesuada. In facilisis scelerisque
-            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
-            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
-            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
-            rutrum, nunc leo tempus nisl, eu mollis justo velit at
-            nunc. Fusce nec egestas sem. Donec fringilla.
+            UnCluttr does something ridiculously simple when it comes to your content. It lets you browse and preview you all your news feeds within a single view, just like you're already used to with your email. Save time, save energy, browse and manage your social reading experiences without over-click syndrome.
           </p>
+		  <h3>Ready for Sharing and Search</h3>
+		  <p>
+			UnCluttr comes ready to connect to your social media services right out of the box. Connect and publish to your Twitter and Facebook accounts, rank properly in search engines, and much more. Moderate and search the feed thats most important to you.
+		  </p>
         </div>
         <div class="span5 asset">
           <img class="img-polaroid" src="http://placehold.it/480x300">
@@ -252,12 +241,12 @@
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse"
                      data-parent="#accordion2" href="#collapseOne">
-                    What does FAQ stand for?
+                    Will UnCluttr be mobile friendly?
                   </a>
                 </div>
                 <div id="collapseOne" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    Frequently Asked Question.
+					Inspiration can strike anywhere, not just when you're sitting behind a computer. So, UnCluttr works where you work. It is a fully responsive web application that works on all devices. Not just resizing images and manipulating display. You can access your news feeds, especially stories that are relevant to you and promote them.
                   </div>
                 </div>
               </div>
@@ -265,12 +254,13 @@
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse"
                      data-parent="#accordion2" href="#collapseTwo">
-                    What's a Frequently Asked Question?
+					Is UnCluttr made for profit?
                   </a>
                 </div>
                 <div id="collapseTwo" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    A question which is commonly asked by users.
+					UnCluttr is a non-profit project. If successfully funded, it will be legally registered as a not-for-profit organisation. Why should you care? It means that no one owns shares of monetary value in the project. We're building UnCluttr because we want online publishing to be better. We want to make decisions focused on that goal, not on building a startup that we can sell to Facebook for $1billion. 
+					Being a non-profit means that any money UnCluttr makes can only ever be used to re-invest in making it better. Not making shareholders rich.
                   </div>
                 </div>
               </div>
